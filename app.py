@@ -9,11 +9,11 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-MONGODB_URL = os.getenv("mongodb+srv://test:sparta@tes1.iovsdoz.mongodb.net/?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("dbsparta")
+MONGODB_URL = os.environ.get("MONGODB_URL")
+DB_NAME = os.environ.get("DB_NAME")
 
 client = MongoClient(MONGODB_URL)
-db = client.dbsparta
+db = client[DB_NAME]
 
 
 
